@@ -22,11 +22,13 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
+import com.vaadin.tutorial.flow.i18n.pagetitle.I18NPageTitle;
 import org.rapidpm.dependencies.core.logger.HasLogger;
 
 import static java.lang.String.valueOf;
 
 @Route("")
+@I18NPageTitle(messageKey = "page.title.main")
 public class VaadinApp extends Composite<Div> implements HasLogger {
 
 //  private final Button         btnClickMe   = new Button("click me");
