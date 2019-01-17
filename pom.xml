@@ -22,7 +22,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.vaadin.tutorial</groupId>
-  <artifactId>flow-i18n-pagetitle</artifactId>
+  <artifactId>flow-i18n-dynamic-pagetitle</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>

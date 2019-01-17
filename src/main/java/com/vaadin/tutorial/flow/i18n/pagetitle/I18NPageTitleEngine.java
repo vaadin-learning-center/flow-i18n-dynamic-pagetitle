@@ -22,7 +22,6 @@ import com.vaadin.flow.server.VaadinServiceInitListener;
 
 public class I18NPageTitleEngine implements VaadinServiceInitListener, UIInitListener, BeforeEnterListener, HasLogger {
 
-
   public static final String ERROR_MSG_NO_LOCALE = "no locale provided and i18nProvider #getProvidedLocales()# list is empty !! ";
   public static final String ERROR_MSG_NO_ANNOTATION = "no annotation found at class ";
 
@@ -30,6 +29,7 @@ public class I18NPageTitleEngine implements VaadinServiceInitListener, UIInitLis
   public void beforeEnter(BeforeEnterEvent event) {
     Class<?> navigationTarget = event.getNavigationTarget();
     I18NPageTitle annotation = navigationTarget.getAnnotation(I18NPageTitle.class);
+
     match(
         matchCase(() -> success(annotation.messageKey())) ,
         matchCase(() -> annotation == null ,
