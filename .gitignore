@@ -1,6 +1,8 @@
 *.iml
 .idea/*
 _data/webdrivers/*
+node/
+node_modules/
 
 # Created by .ignore support plugin (hsz.mobi)
 ### JetBrains template
