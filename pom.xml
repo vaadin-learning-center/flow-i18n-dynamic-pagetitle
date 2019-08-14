@@ -21,10 +21,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <!--  <parent>-->
+  <!--    <groupId>org.rapidpm</groupId>-->
+  <!--    <artifactId>rapidpm-vaadin-dependencies-v14</artifactId>-->
+  <!--    <version>04.01.06-RPM</version>-->
+  <!--  </parent>-->
   <parent>
-    <groupId>org.rapidpm</groupId>
-    <artifactId>rapidpm-vaadin-dependencies-v14</artifactId>
-    <version>04.01.06-RPM</version>
+    <groupId>com.github.vaadin-learning-center.vaadin-dependencies</groupId>
+    <artifactId>vaadin-dependencies-v14</artifactId>
+    <version>222bcc63</version>
   </parent>
 
   <groupId>com.vaadin.tutorial</groupId>
@@ -76,9 +81,16 @@
   </licenses>
 
   <properties>
-<!--    <vaadin-v14.version>14.0.0.rc7</vaadin-v14.version>-->
+    <!--    <vaadin-v14.version>14.0.0.rc7</vaadin-v14.version>-->
     <meecrowave.version>1.2.7</meecrowave.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
 
   <!-- Just to disable any accidental deployment to maven.central -->
   <distributionManagement>
@@ -113,26 +125,10 @@
       <version>${meecrowave.version}</version>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-    </dependency>
   </dependencies>
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-
       <plugin>
         <!--
           With this plugin you can start the container..:
@@ -145,15 +141,15 @@
         <version>${meecrowave.version}</version>
       </plugin>
 
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-war-plugin</artifactId>-->
-<!--        <version>3.2.1</version>-->
-<!--        <configuration>-->
-<!--          &lt;!&ndash; das brauchts leider, sonst muessen wir ein web.xml tippen... &ndash;&gt;-->
-<!--          <failOnMissingWebXml>false</failOnMissingWebXml>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
+      <!--      <plugin>-->
+      <!--        <groupId>org.apache.maven.plugins</groupId>-->
+      <!--        <artifactId>maven-war-plugin</artifactId>-->
+      <!--        <version>3.2.1</version>-->
+      <!--        <configuration>-->
+      <!--          &lt;!&ndash; das brauchts leider, sonst muessen wir ein web.xml tippen... &ndash;&gt;-->
+      <!--          <failOnMissingWebXml>false</failOnMissingWebXml>-->
+      <!--        </configuration>-->
+      <!--      </plugin>-->
     </plugins>
   </build>
 
@@ -198,7 +194,7 @@
               <npmVersion>${frontend-maven-plugin.npmVersion}</npmVersion>
               <!-- optional: where to download node and npm from. Defaults to https://nodejs.org/dist/ -->
               <!--              <downloadRoot>http://myproxy.example.org/nodejs/</downloadRoot>-->
-<!--              <installDirectory>${frontend-maven-plugin.installDirectory}</installDirectory>-->
+              <!--              <installDirectory>${frontend-maven-plugin.installDirectory}</installDirectory>-->
             </configuration>
           </plugin>
         </plugins>
